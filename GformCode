@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>StayGlad- Beauty Services at Home by Professionals. Salon-like experience.</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="jquery-1.11.1.js">
+	</script>
+	<script>
+	function postContactToGoogle(){
+		var email= $('#email').val();
+		var name= $('#name').val();
+		var occasion=$('#occasion').val();
+		var message=$('#message').val();
+		$.ajax({
+		<!--   Get the Entry code for different input attributes from Google Form Souce Code |
+		       Open your Google Response form and Right-Click onto the Inut Box and select Inspect-->
+			url:"https://docs.google.com/forms/d/1DLvXtyrc6CW6iWczg6QP4cqw88eIjXkYQzLXenWQwtY/formResponse",data:{"entry_1995217607":email,"entry_1778891461":name,"entry_549218214":occasion,"entry_2089197617":message},type:"POST",dataType:"xml",statusCode: {0:function() { window.location.replace("thankyou.html");},200:function() {window.location.replace("thankyou.html");
+		}
+	}
+			});
+	}
+	</script>
+	<style>
+.FormRequest {
+background: lightyellow;
+width:100%;
+height:350px;
+border:2px solid blue;
+border-radius:20px 20px 20px 20px;
+}
+.FormRequest #formRequest{
+margin-left:20px;
+font-family:consolas;
+color: blue;
+}
+.FormRequest #formRequest input[type="button"],input[type="reset"]{
+border:3px solid green;
+background: darkgreen;
+color:white;
+border-radius:4px 4px 4px 4px;
+}
+</style>
+</head>
+
+<body>
+<div id="header">
+<div id="nav">
+    <a href="http://stayglad.com/">
+    <img src="stayglad.png" id="logo"/>
+    </a>
+	<a href="http://stayglad.com/" id="about_us_link"> About Us </a>
+	<a href="http://stayglad.com/" id="host_link"> How it Works </a>
+
+
+</div>
+<div id="welcome_text_div">
+<p id="welcome_text"> W E L C O M E <br> To <br> S t a y G l a d </p>
+<p id="welcome_text_undertext"> Home of your personalized gift cards </p>
+
+</div>
+	
+</div>
+<div id="hosting_opportunity"> 
+<center>
+<p id="body_text"> The StayGlad Gift Card <br> She has always been perfect, and she deserves nothing less. <br>Gift her an exclusive pampering session with StayGlad Gift Card </p>
+</center>
+</div>
+<div>
+<table  class="FormRequest" align="center">
+<tr><td>
+<center>
+Your Shopping Inputs
+<hr>
+</center>
+<form id="formRequest">
+<br/>
+<center>
+<input type="radio" name="button" value="500INR CARD"> 500INR CARD
+  <input type="radio" name="button" value="1000INR CARD"> 1000INR CARD
+  <input type="radio" name="button" value="2000INR CARD" checked>  2000INR CARD
+  </center>
+<center>
+<b>Email:</b><br/>
+<textarea name="Email" id="email" form="formRequest" rows="1" cols="80" style="font-size: 16px;"placeholder="Email please.."></textarea><br/><br/>
+</center>
+<center>
+<b>Name:</b><br/>
+<textarea name="Name" id="name" form="formRequest" rows="1" cols="80" style="font-size: 16px;"placeholder="What's your name?"></textarea><br/><br/>
+</center>
+<center>
+<b>Occasion:</b><br/>
+<textarea name="Occasion" id="occasion" form="formRequest" rows="2" cols="80" style="font-size: 16px;" placeholder="What's the Occasion?"></textarea><br/><br/>
+</center>
+<center>
+<b>Post Your Message:<b><br/>
+<textarea name="message" id="message" form="formRequest" rows="8" cols="80" style="font-size: 16px;" placeholder="Write your message here.."></textarea><br/><br/>
+</center>
+
+<center>
+
+<input type="button" name="Submit" id="Submit" onclick="postContactToGoogle()" value="BUY"/>
+<input type="reset" value="Reset"/>
+<br/>
+</center>
+
+
+</form>
+</td>
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>
